@@ -28,22 +28,6 @@ const trackSave = () => {
         document.getElementById("identifierForm").reset();
       }
     });
-
-  // Evita recarga al presionar 'S' con el foco en el botón
-  document
-    .getElementById("identifierForm")
-    .addEventListener("keydown", function (event) {
-      const isSubmitButton =
-        document.activeElement &&
-        document.activeElement.type === "submit" &&
-        document.activeElement.classList.contains("enzona-btn");
-      if (
-        isSubmitButton &&
-        (event.key === "s" || event.key === "S")
-      ) {
-        event.preventDefault();
-      }
-    });
 };
 
 trackSave();
